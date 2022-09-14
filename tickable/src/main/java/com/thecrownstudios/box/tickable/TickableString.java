@@ -1,5 +1,6 @@
 package com.thecrownstudios.box.tickable;
 
+import net.kyori.adventure.text.Component;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
@@ -51,6 +52,11 @@ public class TickableString implements TickableObject<String> {
     @Override
     public int interval() {
         return this.interval;
+    }
+
+    @Override
+    public String[] frames() {
+        return this.frames;
     }
 
 }

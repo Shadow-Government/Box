@@ -44,4 +44,6 @@ public interface TickableObject<E> {
 
     int interval();
 
+    E[] frames();
+
 }

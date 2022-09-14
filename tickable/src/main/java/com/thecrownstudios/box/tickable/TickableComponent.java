@@ -62,4 +62,9 @@ public class TickableComponent implements TickableObject<Component> {
         return this.interval;
     }
 
+    @Override
+    public Component[] frames() {
+        return this.frames;
+    }
+
 }
