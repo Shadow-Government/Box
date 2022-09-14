@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     shadow("org.jetbrains:annotations:23.0.0")
+    shadow("net.kyori:adventure-api:4.11.0")
 }
 
 tasks.withType<JavaCompile> {
