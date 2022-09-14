@@ -1,2 +1,2 @@
 # Box
-A toolbox with many utility
+A toolbox with many utilities

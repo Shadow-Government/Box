@@ -31,9 +31,3 @@ tasks.jar {
 
     archiveFileName.set("${rootProject.name}-${archiveBaseName.get()}-${archiveVersion.get()}.${archiveExtension.get()}")
 }
-
-/*
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
-}
-*/
