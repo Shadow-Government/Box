@@ -11,10 +11,7 @@ repositories {
 }
 
 dependencies {
-    //shadow(project(":api"))
-
     shadow("org.jetbrains:annotations:23.0.0")
-    //shadow("net.kyori:adventure-text-minimessage:4.11")
 }
 
 tasks.withType<JavaCompile> {

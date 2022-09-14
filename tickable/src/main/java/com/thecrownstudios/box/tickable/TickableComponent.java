@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
+import static com.thecrownstudios.box.checker.Checker.checkBetween;
+import static com.thecrownstudios.box.checker.Checker.checkNotNullEmpty;
 import static net.kyori.adventure.text.Component.text;
 
 public class TickableComponent implements Tickable<Component> {
@@ -23,12 +25,16 @@ public class TickableComponent implements Tickable<Component> {
     @Override
     @Contract(pure = true)
     public @NotNull Tickable<Component> withFrames(final @NotNull Component @NotNull[] frames) {
+        checkNotNullEmpty(frames, "frames cannot be null or empty");
+
         return new TickableComponent(frames.clone(), this.interval);
     }
 
     @Override
     @Contract(pure = true)
     public @NotNull Tickable<Component> withInterval(final @Range(from = 1, to = 120) int interval) {
+        checkBetween(interval, 1, 120, "interval must be between 1 and 120");
+
         return new TickableComponent(this.frames.clone(), interval);
     }
 
