@@ -4,7 +4,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
-public class TickableString implements Tickable<String> {
+public class TickableString implements TickableObject<String> {
 
     private final String[] frames;
     private final int interval;
@@ -19,13 +19,13 @@ public class TickableString implements Tickable<String> {
 
     @Override
     @Contract(pure = true)
-    public @NotNull Tickable<String> withFrames(final @NotNull String @NotNull[] frames) {
+    public @NotNull TickableObject<String> withFrames(final @NotNull String @NotNull[] frames) {
         return new TickableString(frames.clone(), this.interval);
     }
 
     @Override
     @Contract(pure = true)
-    public @NotNull Tickable<String> withInterval(final @Range(from = 1, to = 120) int interval) {
+    public @NotNull TickableObject<String> withInterval(final @Range(from = 1, to = 120) int interval) {
         return new TickableString(this.frames.clone(), interval);
     }
 
