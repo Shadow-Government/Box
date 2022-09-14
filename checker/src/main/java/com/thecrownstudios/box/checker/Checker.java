@@ -30,6 +30,18 @@ public final class Checker {
         }
     }
 
+    public static <T> void checkNotEmpty(String reference) {
+        if (reference.isEmpty()) {
+            throw new NullPointerException();
+        }
+    }
+
+    public static <T> void checkNotEmpty(String reference, @NotNull String errorMessage) {
+        if (reference.isEmpty()) {
+            throw new NullPointerException(errorMessage);
+        }
+    }
+
     public static <T> void checkNotNullEmpty(@NotNull T @NotNull[] reference) {
         if (reference == null) {
             throw new NullPointerException();
@@ -70,6 +82,30 @@ public final class Checker {
 
     public static <T> void checkBetween(int reference, int from, int to, @NotNull String errorMessage) {
         if (reference < from || reference > to) {
+            throw new IllegalStateException(errorMessage);
+        }
+    }
+
+    public static <T> void checkBiggerThan(int reference, int minimum) {
+        if (reference < minimum) {
+            throw new IllegalStateException();
+        }
+    }
+
+    public static <T> void checkBiggerThan(int reference, int minimum, @NotNull String errorMessage) {
+        if (reference < minimum) {
+            throw new IllegalStateException(errorMessage);
+        }
+    }
+
+    public static <T> void checkSmallerThan(int reference, int maximum) {
+        if (reference > maximum) {
+            throw new IllegalStateException();
+        }
+    }
+
+    public static <T> void checkSmallerThan(int reference, int maximum, @NotNull String errorMessage) {
+        if (reference > maximum) {
             throw new IllegalStateException(errorMessage);
         }
     }
