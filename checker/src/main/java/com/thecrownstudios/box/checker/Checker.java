@@ -42,6 +42,26 @@ public final class Checker {
         }
     }
 
+    public static <T> void checkNotNullEmpty(@NotNull String reference) {
+        if (reference == null) {
+            throw new NullPointerException();
+        }
+
+        if (reference.isEmpty()) {
+            throw new IllegalStateException();
+        }
+    }
+
+    public static <T> void checkNotNullEmpty(@NotNull String reference, @NotNull String errorMessage) {
+        if (reference == null) {
+            throw new NullPointerException();
+        }
+
+        if (reference.isEmpty()) {
+            throw new IllegalStateException(errorMessage);
+        }
+    }
+
     public static <T> void checkNotNullEmpty(@NotNull T @NotNull[] reference) {
         if (reference == null) {
             throw new NullPointerException();
