@@ -1,5 +1,7 @@
 package com.thecrownstudios.box.tickable;
 
+import com.thecrownstudios.box.tickable.string.EmptyTickableString;
+import com.thecrownstudios.box.tickable.string.TickableString;
 import net.kyori.adventure.text.Component;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -10,7 +12,7 @@ import static com.thecrownstudios.box.checker.Checker.checkNotNullEmpty;
 
 public interface TickableObject<E> {
 
-    @Contract(pure = true)
+    @Contract(value = "_, _ -> new", pure = true)
     static @NotNull TickableObject<String> String(final @NotNull String @NotNull[] frames,
                                                   final @Range(from = 1, to = 120) int interval)
     {
@@ -20,7 +22,13 @@ public interface TickableObject<E> {
         return new TickableString(frames, interval);
     }
 
-    @Contract(pure = true)
+    @Contract(value = "-> new", pure = true)
+    static @NotNull TickableObject<String> String()
+    {
+        return new EmptyTickableString();
+    }
+
+    @Contract(value = "_, _ -> new", pure = true)
     static @NotNull TickableObject<Component> Component(final @NotNull Component @NotNull[] frames,
                                                         final @Range(from = 1, to = 120) int interval)
     {
@@ -30,10 +38,10 @@ public interface TickableObject<E> {
         return new TickableComponent(frames, interval);
     }
 
-    @Contract(pure = true)
+    @Contract(value = "_ -> new", pure = true)
     @NotNull TickableObject<E> withFrames(final @NotNull E @NotNull[] frames);
 
-    @Contract(pure = true)
+    @Contract(value = "_ -> new", pure = true)
     @NotNull TickableObject<E> withInterval(final @Range(from = 1, to = 120) int interval);
 
     @NotNull E prev();

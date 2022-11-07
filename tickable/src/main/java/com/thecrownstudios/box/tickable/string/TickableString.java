@@ -1,6 +1,6 @@
-package com.thecrownstudios.box.tickable;
+package com.thecrownstudios.box.tickable.string;
 
-import net.kyori.adventure.text.Component;
+import com.thecrownstudios.box.tickable.TickableObject;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
