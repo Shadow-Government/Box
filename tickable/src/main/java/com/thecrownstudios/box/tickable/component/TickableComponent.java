@@ -1,5 +1,6 @@
-package com.thecrownstudios.box.tickable;
+package com.thecrownstudios.box.tickable.component;
 
+import com.thecrownstudios.box.tickable.TickableObject;
 import net.kyori.adventure.text.Component;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +25,7 @@ public class TickableComponent implements TickableObject<Component> {
 
     @Override
     @Contract(pure = true)
-    public @NotNull TickableObject<Component> withFrames(final @NotNull Component @NotNull[] frames) {
+    public @NotNull TickableObject<Component> withFrames(final @NotNull Component @NotNull... frames) {
         checkNotNullEmpty(frames, "frames cannot be null or empty");
 
         return new TickableComponent(frames.clone(), this.interval);
