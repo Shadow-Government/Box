@@ -3,7 +3,6 @@ package com.thecrownstudios.box.checker;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
-import java.util.List;
 
 public final class Checker {
 
@@ -250,68 +249,6 @@ public final class Checker {
 	 * @since						0.1
 	 */
 	public static void checkNotEmpty(@NotNull Collection<?> reference, @NotNull String errorMessage) {
-		if (reference.isEmpty()) {
-			throw new IllegalStateException(errorMessage);
-		}
-	}
-
-	/**
-	 * Lorem ipsum dolor sit amet, consectetur adipisci elit,
-	 * sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-	 *
-	 * @param reference				lorem ipsum dolor sit amet
-	 * @since						0.1
-	 */
-	public static void checkNotNullEmpty(@NotNull List<?> reference) {
-		if (reference == null) {
-			throw new NullPointerException();
-		}
-
-		if (reference.isEmpty()) {
-			throw new IllegalStateException();
-		}
-	}
-
-	/**
-	 * Lorem ipsum dolor sit amet, consectetur adipisci elit,
-	 * sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-	 *
-	 * @param reference				lorem ipsum dolor sit amet
-	 * @param errorMessage			lorem ipsum dolor sit amet
-	 * @since						0.1
-	 */
-	public static void checkNotNullEmpty(@NotNull List<?> reference, @NotNull String errorMessage) {
-		if (reference == null) {
-			throw new NullPointerException(errorMessage);
-		}
-
-		if (reference.isEmpty()) {
-			throw new IllegalStateException(errorMessage);
-		}
-	}
-
-	/**
-	 * Lorem ipsum dolor sit amet, consectetur adipisci elit,
-	 * sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-	 *
-	 * @param reference				lorem ipsum dolor sit amet
-	 * @since						0.1
-	 */
-	public static void checkNotEmpty(@NotNull List<?> reference) {
-		if (reference.isEmpty()) {
-			throw new IllegalStateException();
-		}
-	}
-
-	/**
-	 * Lorem ipsum dolor sit amet, consectetur adipisci elit,
-	 * sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
-	 *
-	 * @param reference				lorem ipsum dolor sit amet
-	 * @param errorMessage			lorem ipsum dolor sit amet
-	 * @since						0.1
-	 */
-	public static void checkNotEmpty(@NotNull List<?> reference, @NotNull String errorMessage) {
 		if (reference.isEmpty()) {
 			throw new IllegalStateException(errorMessage);
 		}
