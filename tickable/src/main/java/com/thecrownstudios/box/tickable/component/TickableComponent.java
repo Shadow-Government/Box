@@ -24,7 +24,7 @@ public class TickableComponent implements TickableObject<Component> {
     }
 
     @Override
-    @Contract(pure = true)
+    @Contract(value = "_ -> new", pure = true)
     public @NotNull TickableObject<Component> withFrames(final @NotNull Component @NotNull... frames) {
         checkNotNullEmpty(frames, "frames cannot be null or empty");
 
@@ -32,9 +32,9 @@ public class TickableComponent implements TickableObject<Component> {
     }
 
     @Override
-    @Contract(pure = true)
-    public @NotNull TickableObject<Component> withInterval(final @Range(from = 1, to = 120) int interval) {
-        checkBetween(interval, 1, 120, "interval must be between 1 and 120");
+    @Contract(value = "_ -> new", pure = true)
+    public @NotNull TickableObject<Component> withInterval(final @Range(from = 1, to = 128) int interval) {
+        checkBetween(interval, 1, 128, "interval must be between 1 and 128");
 
         return new TickableComponent(this.frames.clone(), interval);
     }
