@@ -31,9 +31,9 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.thecrownstudios"
-            artifactId = "checker"
-            version = "0.1-SNAPSHOT"
+            groupId     = "com.thecrownstudios"
+            artifactId  = "box-checker"
+            version     = "0.1-SNAPSHOT"
 
             from(components["java"])
         }
