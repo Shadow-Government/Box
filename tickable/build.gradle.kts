@@ -34,7 +34,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.thecrownstudios.box"
+            groupId = "com.thecrownstudios"
             artifactId = "tickable"
             version = "0.1-SNAPSHOT"
 
