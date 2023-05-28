@@ -1,2 +1,6 @@
 rootProject.name = "box"
-include("checker", "tickable")
+
+include (
+    "checker",
+    "tickable"
+)
