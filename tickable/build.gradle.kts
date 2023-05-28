@@ -1,11 +1,11 @@
 plugins {
     id("java")
-    //id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
     id("maven-publish")
 }
 
 dependencies {
-    implementation(project(":checker"))
+    shadow(project(":checker"))
 
     implementation("org.jetbrains:annotations:24.0.1")
     implementation("net.kyori:adventure-api:4.13.0")
@@ -31,9 +31,22 @@ publishing {
 }
 
 /*
+shadow {
+    tasks.withType<ShadowJar> {
+        println(message = "SHADOWJAR INFORMATION")
+        println(message = "rootname:   ${rootProject.name}")
+        println(message = "basename:   ${archiveBaseName.get()}")
+        println(message = "version:    ${archiveVersion.get()}")
+        println(message = "extension:  ${archiveExtension.get()}")
+        println()
+
+        archiveFileName.set("${rootProject.name}-${archiveBaseName.get()}-${archiveVersion.get()}.${archiveExtension.get()}")
+    }
+}
+*/
+
 tasks {
     build {
         finalizedBy(shadowJar)
     }
 }
-*/
