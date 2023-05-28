@@ -1,11 +1,11 @@
 plugins {
     id("java")
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    //id("com.github.johnrengelman.shadow") version "8.1.1"
     id("maven-publish")
 }
 
 dependencies {
-    shadow("org.jetbrains:annotations:24.0.1")
+    implementation("org.jetbrains:annotations:24.0.1")
 }
 
 publishing {
@@ -19,9 +19,10 @@ publishing {
         }
     }
 }
-
+/*
 tasks {
     build {
         finalizedBy(shadowJar)
     }
 }
+*/

@@ -1,14 +1,14 @@
 plugins {
     id("java")
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    //id("com.github.johnrengelman.shadow") version "8.1.1"
     id("maven-publish")
 }
 
 dependencies {
-    shadow(project(":checker"))
+    implementation(project(":checker"))
 
-    shadow("org.jetbrains:annotations:24.0.1")
-    shadow("net.kyori:adventure-api:4.13.0")
+    implementation("org.jetbrains:annotations:24.0.1")
+    implementation("net.kyori:adventure-api:4.13.0")
 }
 
 repositories {
@@ -30,9 +30,10 @@ publishing {
     }
 }
 
-
+/*
 tasks {
     build {
         finalizedBy(shadowJar)
     }
 }
+*/
