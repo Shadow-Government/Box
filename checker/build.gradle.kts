@@ -22,8 +22,10 @@ publishing {
 }
 */
 
+/*
 tasks {
     build {
         finalizedBy(shadowJar)
     }
 }
+*/

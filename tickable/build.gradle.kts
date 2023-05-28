@@ -47,8 +47,10 @@ shadow {
 }
 */
 
+/*
 tasks {
     build {
         finalizedBy(shadowJar)
     }
 }
+*/
