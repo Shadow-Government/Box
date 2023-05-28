@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("maven-publish")
+    //id("maven-publish")
 }
 
 dependencies {
@@ -18,6 +18,7 @@ repositories {
     }
 }
 
+/*
 publishing {
     publications {
         create<MavenPublication>("maven") {
@@ -29,6 +30,7 @@ publishing {
         }
     }
 }
+*/
 
 /*
 shadow {

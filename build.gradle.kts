@@ -6,7 +6,7 @@ allprojects {
 
 subprojects {
     apply(plugin = "java")
-    //apply(plugin = "maven-publish")
+    apply(plugin = "maven-publish")
 
     repositories {
         mavenCentral()
@@ -31,10 +31,9 @@ subprojects {
         }
     }
 
-    /*
     configure<PublishingExtension> {
         publications {
-            create<MavenPublication>("mavenJava") {
+            create<MavenPublication>("maven") {
                 groupId     = project.group as String?
                 artifactId  = project.name
                 version     = project.version as String?
@@ -46,7 +45,12 @@ subprojects {
                     description.set("A concise description of my library")
                     url.set("http://www.example.com/library")
 
-                    print(project.name)
+                    licenses {
+                        license {
+                            name.set("GNU General Public License v3.0")
+                            url.set("https://www.gnu.org/licenses/gpl-3.0.html")
+                        }
+                    }
 
                     developers {
                         developer {
@@ -60,5 +64,4 @@ subprojects {
             }
         }
     }
-    */
 }
