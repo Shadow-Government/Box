@@ -10,6 +10,13 @@ dependencies {
     shadow("net.kyori:adventure-api:4.13.0")
 }
 
+repositories {
+    maven {
+        name = "Adventure"
+        url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+    }
+}
+
 tasks {
     build {
         finalizedBy(shadowJar)
