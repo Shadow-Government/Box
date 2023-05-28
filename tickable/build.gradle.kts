@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("maven-publish")
 }
 
 dependencies {
@@ -16,6 +17,19 @@ repositories {
         url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.thecrownstudios.box"
+            artifactId = "tickable"
+            version = "0.1-SNAPSHOT"
+
+            from(components["java"])
+        }
+    }
+}
+
 
 tasks {
     build {

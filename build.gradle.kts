@@ -5,7 +5,7 @@ allprojects {
 
 subprojects {
     apply(plugin = "java")
-    apply(plugin = "maven-publish")
+    //apply(plugin = "maven-publish")
 
     repositories {
         mavenCentral()
@@ -30,6 +30,7 @@ subprojects {
         }
     }
 
+    /*
     configure<PublishingExtension> {
         publications {
             create<MavenPublication>("mavenJava") {
@@ -58,4 +59,5 @@ subprojects {
             }
         }
     }
+    */
 }
