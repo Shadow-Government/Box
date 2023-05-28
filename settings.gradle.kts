@@ -1,4 +1,4 @@
-rootProject.name = "box"
+rootProject.name = "Box"
 
 include (
     "checker",
