@@ -10,20 +10,6 @@ dependencies {
     implementation("org.jetbrains", "annotations", "$annotations_version")
 }
 
-/*
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.thecrownstudios.box"
-            artifactId = "checker"
-            version = "0.1-SNAPSHOT"
-
-            from(components["java"])
-        }
-    }
-}
-*/
-
 tasks {
     build {
         finalizedBy(shadowJar)

@@ -18,12 +18,15 @@ subprojects {
     }
 
     configure<JavaPluginExtension> {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+
+        tasks.withType<ProcessResources> {
+            filteringCharset = "UTF-8"
+        }
 
         tasks.withType<JavaCompile> {
             options.encoding = "UTF-8"
-            options.compilerArgs.addAll(listOf("-Xlint:none", "-Xlint:-deprecation", "-Xlint:-unchecked"))
         }
 
         tasks.withType<Javadoc> {
@@ -42,8 +45,8 @@ subprojects {
 
                 pom {
                     name.set(project.name)
-                    description.set("A concise description of my library")
-                    url.set("http://www.example.com/library")
+                    description.set("A library with many tools")
+                    url.set("https://github.com/The-Crown-Studios/Box")
 
                     licenses {
                         license {

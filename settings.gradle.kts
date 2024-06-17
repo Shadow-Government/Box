@@ -2,5 +2,6 @@ rootProject.name = "Box"
 
 include (
     "checker",
-    "tickable"
+    "tickable",
+    "tuple"
 )

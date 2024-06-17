@@ -5,10 +5,13 @@ plugins {
 }
 
 dependencies {
+    val annotations_version   = project.findProperty("jetbrains_annotations_version")
+    val adventure_api_version = project.findProperty("adventure_api_version")
+
     shadow(project(":checker"))
 
-    implementation("org.jetbrains:annotations:24.0.1")
-    implementation("net.kyori:adventure-api:4.13.0")
+    implementation("org.jetbrains", "annotations", "$annotations_version")
+    implementation("net.kyori", "adventure-api", "$adventure_api_version")
 }
 
 repositories {
