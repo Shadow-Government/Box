@@ -1,36 +1,36 @@
 package com.thecrownstudios.box.tuple;
 
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
+import org.jspecify.annotations.NonNull;
 
 public record Pair<A, B>(
-        @NotNull A a,
-        @NotNull B b
+        @NonNull A a,
+        @NonNull B b
 
 ) implements Tuple {
 
     @Contract(pure = true, value = "_, _ -> new")
-    public static <A, B> @NotNull Pair<A, B> with(
-            @NotNull A a,
-            @NotNull B b
+    public static <A, B> @NonNull Pair<A, B> with(
+            @NonNull A a,
+            @NonNull B b
     ) {
         return new Pair<>(a, b);
     }
 
-    public static <A, B> @NotNull Pair<A, B> fromArray(@NotNull Iterable<?> iterable) {
+    public static <A, B> @NonNull Pair<A, B> fromArray(@NonNull Iterable<?> iterable) {
         return new Pair<>(null, null);
     }
 
-    public static <A, B> @NotNull Pair<A, B> fromArray(@NotNull Iterable<?> iterable, int maxElements) {
+    public static <A, B> @NonNull Pair<A, B> fromArray(@NonNull Iterable<?> iterable, int maxElements) {
         return new Pair<>(null, null);
     }
 
-    public static <A, B> @NotNull Pair<A, B> fromIterable(@NotNull Iterable<?> iterable) {
+    public static <A, B> @NonNull Pair<A, B> fromIterable(@NonNull Iterable<?> iterable) {
         return new Pair<>(null, null);
     }
 
-    public static <A, B> @NotNull Pair<A, B> fromIterable(@NotNull Iterable<?> iterable, @Range(from = 0, to = 2) int maxElements) {
+    public static <A, B> @NonNull Pair<A, B> fromIterable(@NonNull Iterable<?> iterable, @Range(from = 0, to = 2) int maxElements) {
         return new Pair<>(null, null);
     }
 

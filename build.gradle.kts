@@ -1,7 +1,7 @@
 allprojects {
     group       = "com.thecrownstudios.box"
     version     = "0.1-SNAPSHOT"
-    description = "lorem ipsum"
+    description = "A library with many tools"
 }
 
 subprojects {

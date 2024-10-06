@@ -5,9 +5,11 @@ plugins {
 }
 
 dependencies {
-    val annotations_version = findProperty("jetbrains_annotations_version")
+    val jspecify_annotations_version = findProperty("jspecify_annotations_version")
+    val jetbrains_annotations_version = findProperty("jetbrains_annotations_version")
 
-    implementation("org.jetbrains", "annotations", "$annotations_version")
+    implementation("org.jspecify", "jspecify", "$jspecify_annotations_version")
+    implementation("org.jetbrains", "annotations", "$jetbrains_annotations_version")
 }
 
 /*
