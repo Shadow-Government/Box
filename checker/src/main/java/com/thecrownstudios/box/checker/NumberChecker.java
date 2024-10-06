@@ -1,6 +1,6 @@
 package com.thecrownstudios.box.checker;
 
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.text.MessageFormat;
 
@@ -31,7 +31,7 @@ public interface NumberChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkBetween(int reference, int from, int to, @NotNull String errorMessage) {
+    static void checkBetween(int reference, int from, int to, @NonNull String errorMessage) {
         if (reference < from || reference > to) {
             throw new IllegalStateException(errorMessage);
         }
@@ -47,7 +47,7 @@ public interface NumberChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkBetween(int reference, int from, int to, @NotNull String errorMessage, Object... arguments) {
+    static void checkBetween(int reference, int from, int to, @NonNull String errorMessage, Object... arguments) {
         if (reference < from || reference > to) {
             throw new IllegalStateException(MessageFormat.format(errorMessage, arguments));
         }
@@ -76,7 +76,7 @@ public interface NumberChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkBiggerThan(int reference, int minimum, @NotNull String errorMessage) {
+    static void checkBiggerThan(int reference, int minimum, @NonNull String errorMessage) {
         if (reference < minimum) {
             throw new IllegalStateException(errorMessage);
         }
@@ -91,7 +91,7 @@ public interface NumberChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkBiggerThan(int reference, int minimum, @NotNull String errorMessage, Object... arguments) {
+    static void checkBiggerThan(int reference, int minimum, @NonNull String errorMessage, Object... arguments) {
         if (reference < minimum) {
             throw new IllegalStateException(MessageFormat.format(errorMessage, arguments));
         }
@@ -120,7 +120,7 @@ public interface NumberChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkSmallerThan(int reference, int maximum, @NotNull String errorMessage) {
+    static void checkSmallerThan(int reference, int maximum, @NonNull String errorMessage) {
         if (reference > maximum) {
             throw new IllegalStateException(errorMessage);
         }
@@ -135,7 +135,7 @@ public interface NumberChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkSmallerThan(int reference, int maximum, @NotNull String errorMessage, Object... arguments) {
+    static void checkSmallerThan(int reference, int maximum, @NonNull String errorMessage, Object... arguments) {
         if (reference > maximum) {
             throw new IllegalStateException(MessageFormat.format(errorMessage, arguments));
         }

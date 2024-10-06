@@ -1,7 +1,7 @@
 package com.thecrownstudios.box.checker;
 
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.text.MessageFormat;
 
@@ -32,7 +32,7 @@ public interface Checker extends ArrayChecker, CollectionChecker, ExpressionChec
      * @since                       0.1
      */
     @Contract("null, _ -> fail")
-    static <T> void checkNotNull(T reference, @NotNull String errorMessage) {
+    static <T> void checkNotNull(T reference, @NonNull String errorMessage) {
         if (reference == null) {
             throw new NullPointerException(errorMessage);
         }
@@ -48,7 +48,7 @@ public interface Checker extends ArrayChecker, CollectionChecker, ExpressionChec
      * @since                       0.1
      */
     @Contract("null, _, _ -> fail")
-    static <T> void checkNotNull(T reference, @NotNull String errorMessage, Object... arguments) {
+    static <T> void checkNotNull(T reference, @NonNull String errorMessage, Object... arguments) {
         if (reference == null) {
             throw new NullPointerException(MessageFormat.format(errorMessage, arguments));
         }

@@ -1,7 +1,7 @@
 package com.thecrownstudios.box.checker;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import java.text.MessageFormat;
 
@@ -15,7 +15,7 @@ public interface ArrayChecker {
      * @param <T>					lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static <T> void checkNotEmpty(@NotNull T @NotNull [] reference) {
+    static <T> void checkNotEmpty(@NonNull T @NonNull [] reference) {
         if (reference.length == 0) {
             throw new IllegalStateException();
         }
@@ -30,7 +30,7 @@ public interface ArrayChecker {
      * @param <T>					lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static <T> void checkNotEmpty(@NotNull T @NotNull [] reference, @NotNull String errorMessage) {
+    static <T> void checkNotEmpty(@NonNull T @NonNull [] reference, @NonNull String errorMessage) {
         if (reference.length == 0) {
             throw new IllegalStateException(errorMessage);
         }
@@ -45,7 +45,7 @@ public interface ArrayChecker {
      * @param <T>					lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static <T> void checkNotEmpty(@NotNull T @NotNull [] reference, @NotNull String errorMessage, Object... arguments) {
+    static <T> void checkNotEmpty(@NonNull T @NonNull [] reference, @NonNull String errorMessage, Object... arguments) {
         if (reference.length == 0) {
             throw new IllegalStateException(MessageFormat.format(errorMessage, arguments));
         }
@@ -59,7 +59,7 @@ public interface ArrayChecker {
      * @param <T>					lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static <T> void checkNotNullEmpty(@NotNull T @Nullable [] reference) {
+    static <T> void checkNotNullEmpty(@NonNull T @Nullable [] reference) {
         if (reference == null) {
             throw new NullPointerException();
         }
@@ -78,7 +78,7 @@ public interface ArrayChecker {
      * @param <T>					lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static <T> void checkNotNullEmpty(@NotNull T @Nullable[] reference, @NotNull String errorMessage) {
+    static <T> void checkNotNullEmpty(@NonNull T @Nullable[] reference, @NonNull String errorMessage) {
         if (reference == null) {
             throw new NullPointerException(errorMessage);
         }
@@ -97,7 +97,7 @@ public interface ArrayChecker {
      * @param <T>					lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static <T> void checkNotNullEmpty(@NotNull T @Nullable[] reference, @NotNull String errorMessage, Object... arguments) {
+    static <T> void checkNotNullEmpty(@NonNull T @Nullable[] reference, @NonNull String errorMessage, Object... arguments) {
         if (reference == null) {
             throw new NullPointerException(MessageFormat.format(errorMessage, arguments));
         }

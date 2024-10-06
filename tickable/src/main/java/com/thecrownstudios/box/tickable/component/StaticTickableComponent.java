@@ -6,7 +6,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
-import static com.thecrownstudios.box.checker.Checker.checkNotNullEmpty;
+import static com.thecrownstudios.box.checker.ArrayChecker.checkNotNullEmpty;
 import static net.kyori.adventure.text.Component.text;
 
 public record StaticTickableComponent(Component frame) implements TickableObject<Component> {

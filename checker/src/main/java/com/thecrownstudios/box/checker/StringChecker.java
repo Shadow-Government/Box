@@ -1,8 +1,8 @@
 package com.thecrownstudios.box.checker;
 
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import java.text.MessageFormat;
 
@@ -16,7 +16,7 @@ public interface StringChecker {
      * @since						0.1
      */
     @Contract("_ -> fail")
-    static void checkNotEmpty(@NotNull String reference) {
+    static void checkNotEmpty(@NonNull String reference) {
         if (reference.isEmpty()) {
             throw new NullPointerException();
         }
@@ -30,7 +30,7 @@ public interface StringChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since 						0.1
      */
-    static void checkNotEmpty(@NotNull String reference, @NotNull String errorMessage) {
+    static void checkNotEmpty(@NonNull String reference, @NonNull String errorMessage) {
         if (reference.isEmpty()) {
             throw new NullPointerException(errorMessage);
         }
@@ -44,7 +44,7 @@ public interface StringChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since 						0.1
      */
-    static void checkNotEmpty(@NotNull String reference, @NotNull String errorMessage, Object... arguments) {
+    static void checkNotEmpty(@NonNull String reference, @NonNull String errorMessage, Object... arguments) {
         if (reference.isEmpty()) {
             throw new NullPointerException(MessageFormat.format(errorMessage, arguments));
         }
@@ -75,7 +75,7 @@ public interface StringChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkNotNullEmpty(@Nullable String reference, @NotNull String errorMessage) {
+    static void checkNotNullEmpty(@Nullable String reference, @NonNull String errorMessage) {
         if (reference == null) {
             throw new NullPointerException(errorMessage);
         }
@@ -93,7 +93,7 @@ public interface StringChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkNotNullEmpty(@Nullable String reference, @NotNull String errorMessage, Object... arguments) {
+    static void checkNotNullEmpty(@Nullable String reference, @NonNull String errorMessage, Object... arguments) {
         if (reference == null) {
             throw new NullPointerException(MessageFormat.format(errorMessage, arguments));
         }

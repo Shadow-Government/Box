@@ -5,8 +5,8 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
-import static com.thecrownstudios.box.checker.Checker.checkBetween;
-import static com.thecrownstudios.box.checker.Checker.checkNotNullEmpty;
+import static com.thecrownstudios.box.checker.ArrayChecker.checkNotNullEmpty;
+import static com.thecrownstudios.box.checker.NumberChecker.checkBetween;
 
 public class TickableString implements TickableObject<String> {
 

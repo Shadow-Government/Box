@@ -1,7 +1,7 @@
 package com.thecrownstudios.box.checker;
 
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.text.MessageFormat;
 
@@ -30,7 +30,7 @@ public interface ExpressionChecker {
      * @since						0.1
      */
     @Contract("false, _ -> fail")
-    static void checkArgument(boolean expression, @NotNull String errorMessage) {
+    static void checkArgument(boolean expression, @NonNull String errorMessage) {
         if (!expression) {
             throw new IllegalArgumentException(errorMessage);
         }
@@ -45,7 +45,7 @@ public interface ExpressionChecker {
      * @since						0.1
      */
     @Contract("false, _, _ -> fail")
-    static void checkArgument(boolean expression, @NotNull String errorMessage, Object... arguments) {
+    static void checkArgument(boolean expression, @NonNull String errorMessage, Object... arguments) {
         if (!expression) {
             throw new IllegalArgumentException(MessageFormat.format(errorMessage, arguments));
         }

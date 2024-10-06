@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
-import static com.thecrownstudios.box.checker.Checker.checkNotNullEmpty;
+import static com.thecrownstudios.box.checker.ArrayChecker.checkNotNullEmpty;
 
 public record StaticTickableString(String frame) implements TickableObject<String> {
 

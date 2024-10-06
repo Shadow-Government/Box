@@ -1,5 +1,6 @@
 package com.thecrownstudios.box.tickable;
 
+import com.thecrownstudios.box.checker.StringChecker;
 import com.thecrownstudios.box.tickable.component.StaticTickableComponent;
 import com.thecrownstudios.box.tickable.component.TickableComponent;
 import com.thecrownstudios.box.tickable.string.StaticTickableString;
@@ -9,7 +10,9 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 
-import static com.thecrownstudios.box.checker.Checker.*;
+import static com.thecrownstudios.box.checker.ArrayChecker.checkNotNullEmpty;
+import static com.thecrownstudios.box.checker.Checker.checkNotNull;
+import static com.thecrownstudios.box.checker.NumberChecker.checkBetween;
 
 public interface TickableObject<E> extends Cloneable {
 
@@ -27,7 +30,7 @@ public interface TickableObject<E> extends Cloneable {
     @Contract(value = "_ -> new", pure = true)
     static @NotNull TickableObject<String> String(final @NotNull String frame)
     {
-        checkNotNullEmpty(frame, "frame cannot be null or empty");
+        StringChecker.checkNotNullEmpty(frame, "frame cannot be null or empty");
 
         return new StaticTickableString(frame);
     }

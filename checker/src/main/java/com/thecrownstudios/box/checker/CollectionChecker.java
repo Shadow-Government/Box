@@ -1,8 +1,8 @@
 package com.thecrownstudios.box.checker;
 
 import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import java.text.MessageFormat;
 import java.util.Collection;
@@ -16,7 +16,7 @@ public interface CollectionChecker {
      * @param reference				lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkNotEmpty(@NotNull Collection<?> reference) {
+    static void checkNotEmpty(@NonNull Collection<?> reference) {
         if (reference.isEmpty()) {
             throw new IllegalStateException();
         }
@@ -30,7 +30,7 @@ public interface CollectionChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkNotEmpty(@NotNull Collection<?> reference, @NotNull String errorMessage) {
+    static void checkNotEmpty(@NonNull Collection<?> reference, @NonNull String errorMessage) {
         if (reference.isEmpty()) {
             throw new IllegalStateException(errorMessage);
         }
@@ -44,7 +44,7 @@ public interface CollectionChecker {
      * @param errorMessage			lorem ipsum dolor sit amet
      * @since						0.1
      */
-    static void checkNotEmpty(@NotNull Collection<?> reference, @NotNull String errorMessage, Object... arguments) {
+    static void checkNotEmpty(@NonNull Collection<?> reference, @NonNull String errorMessage, Object... arguments) {
         if (reference.isEmpty()) {
             throw new IllegalStateException(MessageFormat.format(errorMessage, arguments));
         }
@@ -77,7 +77,7 @@ public interface CollectionChecker {
      * @since						0.1
      */
     @Contract("null, _ -> fail")
-    static void checkNotNullEmpty(@Nullable Collection<?> reference, @NotNull String errorMessage) {
+    static void checkNotNullEmpty(@Nullable Collection<?> reference, @NonNull String errorMessage) {
         if (reference == null) {
             throw new NullPointerException(errorMessage);
         }
@@ -96,7 +96,7 @@ public interface CollectionChecker {
      * @since						0.1
      */
     @Contract("null, _, _ -> fail")
-    static void checkNotNullEmpty(@Nullable Collection<?> reference, @NotNull String errorMessage, Object... arguments) {
+    static void checkNotNullEmpty(@Nullable Collection<?> reference, @NonNull String errorMessage, Object... arguments) {
         if (reference == null) {
             throw new NullPointerException(MessageFormat.format(errorMessage, arguments));
         }
